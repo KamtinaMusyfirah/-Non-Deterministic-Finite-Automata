@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Solway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <title>Non-Deterministic Finite Automata</title>
+  </head>
+  <body>
+    <!-- Start header -->
+    <header class="top-header">
+      <nav class="navbar header-nav navbar-expand-lg">
+          <div class="container-fluid">
+            <nav class="navbar ">
+              <span class="navbar-brand mb-0 h1">Kamtina Musyfirah</span>
+            </nav>
+
+              <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                  <ul class="navbar-nav">
+                      <li><a class="nav-link active" href="#">Home</a></li>
+                      <li><a class="nav-link" href="https://kamtinamusyfirah.github.io/tba-assignment1/">Teori Bahasa dan Otomata</a></li>
+                      <li><a class="nav-link" href="https://kamtinamusyfirah.github.io/tba-assignment2/">Notasi Big O</a></li>
+                      <li><a class="nav-link" href="#">NFA</a></li>
+                      <li><a class="nav-link" href="https://kamtinamusyfirah.github.io/RegulerExpression/">Regular Expression</a></li>
+                      <li><a class="nav-link" href="#">About</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+  <!-- End header -->
+
+  <!--Carousel-->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Teori Bahasa dan Otomata</h1>
+    </div>
+  </div>
+  <!--End Carousel-->
+  <h1>Non-Deterministic Finite Automata</h1>
+
+  <!-- section -->
+  <div class="container">
+    <div class="card">
+        <div class="contentBx">
+            <h2>Finite Automata</h2>
+            <p>
+              Finite Automata adalah mesin automata dari suatu Bahasa regular. Finite Automata memiliki jumlah state 
+              yang banyaknya berhingga dan dapat berpindah-pindah dari suate state ke state yang lainnya. 
+              Finite Automata dibagi menjadi Deterministic Finite Automata (DFA) dan Non Deterministic Finite Automata (NFA).
+            </p>
+            <p>
+              Pada Deterministic Finite Automata, jika suatu state diberi inputan maka state tersebut akan selalu tepat menuju satu state.
+            </p>
+            <img src="dfa.PNG" alt="" style="display: block; margin-left: auto; margin-right: auto;">
+            <p>
+              Pada Non Deterministic Finite Automata, jika suatu state diberi inputan maka mungkin saja bisa menuju ke beberapa state berikutnya. Misalnya jika di S0 diberi inputan b, maka S0 bisa menuju ke S1 dan S2.
+              NDFA sering kali lebih ringkas dibanding DFA karena tidak harus fully defined.
+            </p>
+            <img src="ndfa.PNG" alt="" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    <div class="card">
+      <div class="contentBx">
+          <h2>Pemanfaatan Non-Deterministic Finite Automata pada Aplikasi Simulasi Kopi Vending</h2>
+          <p>
+            Teknik spesifikasi formal yang digunakan yaitu dengan membuat state diagram sebagai
+            model perilaku sebuah sistem. State diagram ini akan menjadi dasar dalam pendefinisian tupel dan
+            perancangan flowchart program nantinya. <span style="color: black;"> Jenis state diagram yang digunakan yaitu mealy
+            machines dengan konsep Non-Deterministic Finite Automata (NFA). Dengan mealy machines akan
+            terlihat output yang dikeluarkan pada setiap transisi antar state yang terjadi berdasarkan
+            inputan yang diterima dan state sebelumnya. </span>
+            <img src="state.PNG" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 350px;">
+          </p>
+          <h4>KETERANGAN : </h4>
+            inputan uang yang diterima : <br> 
+            x = lembar uang Rp 5000 , y = lembar uang Rp 10.000 <br>
+            Setiap kali dimasukkan uang, akan terjadi transisi pada state: <br>
+            A = saldo Rp 0, B = saldo Rp 5.000, C = saldo Rp 10.000, D = saldp Rp 15.000 <br>
+            Setelah uang dimasukkan, dapat diinput ukuran gelas kopi yang diinginkan : <br>
+            E = memilih gelas kecil, F = memilih gelas sedang, G = memilih gelas besar <br>
+            Setelah memilih ukuran gelas, dapat diinput variasi rasa kopi yang diinginkan, antara lain : <br>
+            i = memilih espresso, j = memilih americano, k = memilih caffee latte, l = memilih cappuccino, <br> m = memilih caffee macchiatto, n = memilih memilih caffee mocha <br>
+            Inputan gula kemudian akan ditambahkan secara otomatis sebagai salah satu bahan utama
+            untuk membuat kopi. Terdapat juga bahan ekstra
+            yang dapat diinput maksimal sebanyak 2 kali, yaitu : <br>
+            O = memilih gula, P = memilih kopi, Q = memilih susu, R = memilih coklat <br>
+            Selanjutnya, mesin akan dimasukkan inputan 
+            S = menambahkan sedikit air untuk melarutkan
+            bahan-bahan yang dicampurkan pada kopi <br> 
+            dan <br> 
+            T = untuk mengaduk kopi <br>
+            Setelah itu dapat dipilih suhu kopi yang diinginkan, yaitu : <br>
+            U = memilih hot, V = memilih ice <br>
+          <p>
+            Jika ingin membatalkan inputan variasi rasa kopi yang
+            dipilih, dapat diinput h (reset) untuk kembali
+            mengulang inputan ke state H. Sedangkan jika
+            ingin memproses inputan, dapat diinput w (proses)
+            untuk membuat kopi. Mesin kemudian akan
+            mengeluarkan output bernilai 1 (mengeluarkan
+            kopi) dan kembali ke state awal untuk memproses
+            transaksi pembelian kopi yang baru.
+          </p>
+          <p>
+            Mealy machine didefinisikan dalam 6 tupel,
+            dengan rumus M = (Q, Ʃ, δ, S, Δ, λ), dimana : <br>
+            Q= himpunan state <br>
+            Ʃ= himpunan simbol input <br>
+            δ= fungsi transisi (δ : Q x Ʃ → Q) <br>
+            S = state awal (initial state) <br>
+            Δ= himpunan output <br>
+            λ = fungsi output untuk setiap transisi <br>
+          </p>
+          <p>
+            Berdasarkan pendefinisian tersebut, dapat
+            dibuat konfigurasi mesin sebagai berikut: <br>
+            Q = {A, B, C, D, E, F, G, H, I, J, K, L, M,
+            N, O, P, Q, R, S, T, U, V} <br>
+            Ʃ = {e, f, g, h, I, j, k, l, m, n, o, p, q, r, s, t,
+            u, x, y, z, 0, 1} <br>
+            δ(A, e) = A; δ(A, f) = A; δ(A, g) = A; <br>
+            δ(A, x) = B; δ(A, y) = C; <br>
+            δ(B, f) = B; δ(B, g) = B; <br>
+            δ(B, x) = C; δ(B, y) = D; <br>
+            δ(C, g) = C; δ(C, x) = D; δ(C, y) = D; <br>
+            δ(D, x) = D; δ(D, y) = D; <br>
+            δ(B, e) = E; δ(C, e) = E; δ(D, e) = E; <br>
+            δ(C, f) = F; δ(D, f) = F; δ(D, g) = G; <br>
+            δ(E, 0) = H; δ(F, 0) = H; δ(G, 0) = H; <br>
+            δ(H, i) = I; δ(H, j) = J; δ(H, k) = K; <br>
+            δ(H, l) = L; δ(H, m) = M; δ(H, n) = N; <br>
+            δ(I, h) = H; δ(J, h) = H; δ(K, h) = H; <br>
+            δ(L, h) = H; δ(M, h) = H; δ(N, h) = H; <br>
+            δ(I, o) = O; δ(J, o) = O; δ(K, o) = O; <br>
+            δ(L, o) = O; δ(M, o) = O; δ(N, o) = O; <br>
+            δ(O, o) = O; δ(O, h) = H; δ(O, p) = P; <br>
+            δ(O, q) = Q; δ(O, r) = R; <br>
+            δ(P, p) = P; δ(P, h) = H; δ(P, q) = Q; <br>
+            δ(P, o) = O; δ(P, r) = R; δ(P, s) = S; <br>
+            δ(Q, p) = P; δ(Q, h) = H; δ(Q, q) = Q; <br>
+            δ(Q, o) = O; δ(Q, r) = R; δ(Q, s) = S; <br>
+            δ(R, p) = P; δ(R, h) = H; δ(R, q) = Q; <br>
+            δ(R, o) = O; δ(R, r) = R; δ(R, s) = S; <br>
+            δ(S, t) = T; δ(T, u) = U; <br>
+            δ(T, v) = V; δ(T, h) = H; <br>
+            δ(U, w) = A; δ(U, h) = H; <br>
+            δ(V, w) = A; δ(V, h) = H; <br>
+            S = {A} <br>
+            Δ = {0, 1, x, y} <br>
+            λ(A, e) = 0; λ(A, f) = 0; λ(A, g) = 0; <br>
+            λ(A, x) = 0; λ(A, y) = 0; <br>
+            λ(B, f) = 0; λ(B, g) = 0; <br>
+            λ(B, x) = 0; λ(B, y) = 0; <br>
+            λ(C, g) = 0; λ(C, x) = 0; λ(C, y) = x; <br>
+            λ(D, x) = x; λ(D, y) = y; <br>
+            λ(B, e) = 0; λ(C, e) = x; λ(D, e) = y; <br>
+            λ(C, f) = 0; λ(D, f) = x; λ(D, g) = 0; <br>
+            λ(E, 0) = 0; λ(F, 0) = 0; λ(G, 0) = 0; <br>
+            λ(H, i) = 0; λ(H, j) = 0; λ(H, k) = 0; <br>
+            λ(H, l) = 0; λ(H, m) = 0; λ(H, n) = 0; <br>
+            λ(I, h) = 0; λ(J, h) = 0; λ(K, h) = 0; <br>
+            λ(L, h) = 0; λ(M, h) = 0; λ(N, h) = 0; <br>
+            λ(I, o) = 0; λ(J, o) = 0; λ(K, o) = 0; <br>
+            λ(L, o) = 0; λ(M, o) = 0; λ(N, o) = 0; <br>
+            λ(O, o) = 0; λ(O, h) = 0; λ(O, p) = 0; <br>
+            λ(O, q) = 0; λ(O, r) = 0; <br>
+            λ(P, p) = 0; λ(P, h) = 0; λ(P, q) = 0; <br>
+            λ(P, r) = 0; λ(P, s) = 0; λ(P, o) = 0; <br>
+            λ(Q, p) = 0; λ(Q, h) = 0; λ(Q, q) = 0; <br>
+            λ(Q, r) = 0; λ(Q, s) = 0; λ(Q, o) = 0; <br>
+            λ(R, p) = 0; λ(R, h) = 0; λ(R, q) = 0; <br>
+            λ(R, r) = 0; λ(R, s) = 0; λ(R, o) = 0; <br>
+            λ(S, t) = 0; λ(T, u) = 0; <br>
+            λ(T, v) = 0; λ(T, h) = 0; <br>
+            λ(U, w) = 1; λ(U, h) = 0; <br>
+            λ(V, w) = 1; λ(V, h) = 0; <br>
+          </p>
+
+          <p>
+            Dapat dilihat sesuai pendefinisan tupel
+            diatas bahwa mesin dimungkinkan untuk tidak
+            terjadi kesalahan dalam memproses sistem
+            pembayaran dan pilihan kopi yang diinginkan.
+            Mesin akan mengikuti alur inputan dimulai saat
+            menerima uang, memilih ukuran gelas, memilih
+            varian rasa, menambah bahan ekstra, dan memilih
+            suhu kopi. Saat diterima inputan proses, mesin
+            akan membaca simbol-simbol masukan yang
+            diterima dan membuat kopi.
+          </p>
+      </div>
+    </div>
+
+  <div class="about1">
+    <h2>ABOUT</h2>
+    <hr>
+  </div>
+
+  <div class="about">
+    <div class="box">
+      <div class="icon">
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+      </div>
+      <div class="details">
+        <h3>Sinjai</h3>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="icon">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </div>
+      <div class="details">
+        <h3>KamtinaMusyfirah</h3>
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="icon">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+      </div>
+      <div class="details">
+        <h3>kamtinamusyfirah12@gmail.com</h3>
+      </div>
+    </div>
+  </div>
+  <!-- end section -->
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
